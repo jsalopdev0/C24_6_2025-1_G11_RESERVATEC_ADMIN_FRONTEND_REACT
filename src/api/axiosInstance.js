@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://reservatec-tesis-backend-8asuen-ea378d-31-220-104-112.traefik.me/api',
+  baseURL: 'https://reservatec-tesis-backend-8asuen-ea378d-31-220-104-112.traefik.me/api',
 
   headers: {
     'Content-Type': 'application/json',
