@@ -139,7 +139,15 @@ const Login = () => {
           >
             Reservatec Admin
           </h2>
-          <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              minHeight: '40px',
+              transition: 'all 0.2s ease-in-out',
+            }}
+          >
             <GoogleLogin
               key={loginKey}
               onSuccess={handleLoginSuccess}
@@ -154,7 +162,6 @@ const Login = () => {
       </div>
     </div>
   );
-
 };
 
 export default Login;
