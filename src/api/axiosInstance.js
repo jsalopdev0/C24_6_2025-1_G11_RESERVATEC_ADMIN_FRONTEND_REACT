@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api',
+  baseURL: 'http://reservatec-tesis-backend-8asuen-ea378d-31-220-104-112.traefik.me/api',
+
   headers: {
     'Content-Type': 'application/json',
   },
 });
-
 
 // Agrega token automáticamente si existe
 axiosInstance.interceptors.request.use(
