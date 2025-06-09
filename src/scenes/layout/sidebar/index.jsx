@@ -23,7 +23,12 @@ import {
   ReceiptOutlined,
   TimelineOutlined,
   WavesOutlined,
+  LocationOnOutlined,
+  NotificationsNoneOutlined,
+  EventBusyOutlined,
+  DateRangeOutlined,
 } from "@mui/icons-material";
+
 import logo from "../../../assets/images/logo.png";
 import avatarDefault from "../../../assets/images/avatar.png";
 import Item from "./Item";
@@ -65,50 +70,46 @@ const SideBar = () => {
       width="260px"
     >
       <Menu
-  menuItemStyles={{
-    button: {
-      ":hover": { background: "transparent" },
-      fontSize: "17px",
-    },
-  }}
->
-  <MenuItem
-    rootStyles={{
-      margin: "10px 0 20px 0",
-      color: colors.gray[100],
-      fontSize: "17px",
-    }}
-  >
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
-      {!collapsed && (
-        <Box display="flex" alignItems="center" gap="12px">
-          <img
-            style={{ width: "42px", height: "42px", borderRadius: "10px" }}
-            src={logo}
-            alt="ReservaTec logo"
-          />
-          <Typography
-            variant="h4"
-            fontWeight="bold"
-            textTransform="capitalize"
-            sx={{ color: "#00B2E2", fontSize: "22px" }}
+        menuItemStyles={{
+          button: {
+            ":hover": { background: "transparent" },
+            fontSize: "17px",
+          },
+        }}
+      >
+        <MenuItem
+          rootStyles={{
+            margin: "10px 0 20px 0",
+            color: colors.gray[100],
+            fontSize: "17px",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
           >
-            ReservaTec
-          </Typography>
-        </Box>
-      )}
-      <IconButton onClick={() => setCollapsed(!collapsed)}>
-        <MenuOutlined fontSize="medium" />
-      </IconButton>
-    </Box>
-  </MenuItem>
-</Menu>
+            {!collapsed && (
+              <Box display="flex" alignItems="center" gap="12px">
+                <Typography
+                  variant="h4"
+                  fontWeight="bold"
+                  textTransform="capitalize"
+                  sx={{ color: "#00B2E2", fontSize: "22px" }}
+                >
+                  ReservaTec Admin
+                </Typography>
+              </Box>
+
+            )}
+            <IconButton onClick={() => setCollapsed(!collapsed)}>
+              <MenuOutlined fontSize="medium" />
+            </IconButton>
+          </Box>
+        </MenuItem>
+      </Menu>
 
 
       {!collapsed && (
@@ -188,14 +189,13 @@ const SideBar = () => {
         >
           <Item title="Dashboard" path="/" icon={<DashboardOutlined fontSize="medium" />} />
         </Menu>
-
-       
         <Menu
           menuItemStyles={{
             button: {
               ":hover": {
                 color: "#00B2E2",
                 background: "transparent",
+                transition: ".4s ease",
               },
               fontSize: "17px",
               marginBottom: "10px",
@@ -204,13 +204,13 @@ const SideBar = () => {
         >
           <Item title="Usuarios" path="/usuarios" icon={<ContactsOutlined fontSize="medium" />} />
           <Item title="Reservas" path="/reservas" icon={<ReceiptOutlined fontSize="medium" />} />
-          <Item title="Espacios" path="/espacios" icon={<PeopleAltOutlined fontSize="medium" />} />
-          <Item title="Notififaciones" path="/notificaciones" icon={<PeopleAltOutlined fontSize="medium" />} />
-
-          <Item title="Fechas Bloqueadas" path="/fechas-bloqueadas" icon={<CalendarTodayOutlined fontSize="medium" />} />
-          <Item title="Reservas Calendario" path="/calendario" icon={<CalendarTodayOutlined fontSize="medium" />} />
+          <Item title="Espacios" path="/espacios" icon={<LocationOnOutlined fontSize="medium" />} />
+          <Item title="Notificaciones" path="/notificaciones" icon={<NotificationsNoneOutlined fontSize="medium" />} />
+          <Item title="Fechas Bloqueadas" path="/fechas-bloqueadas" icon={<EventBusyOutlined fontSize="medium" />} />
+          <Item title="Reservas Calendario" path="/calendario" icon={<DateRangeOutlined fontSize="medium" />} />
         </Menu>
-      
+
+
       </Box>
 
     </Sidebar>
