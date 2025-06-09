@@ -189,14 +189,7 @@ const SideBar = () => {
           <Item title="Dashboard" path="/" icon={<DashboardOutlined fontSize="medium" />} />
         </Menu>
 
-        <Typography
-          variant="h6"
-          color={colors.gray[300]}
-          sx={{ my: "25px", ml: "20px", fontSize: "16px" }}
-        >
-          {!collapsed ? "Data" : " "}
-        </Typography>
-
+       
         <Menu
           menuItemStyles={{
             button: {
@@ -217,52 +210,7 @@ const SideBar = () => {
           <Item title="Fechas Bloqueadas" path="/fechas-bloqueadas" icon={<CalendarTodayOutlined fontSize="medium" />} />
           <Item title="Reservas Calendario" path="/calendario" icon={<CalendarTodayOutlined fontSize="medium" />} />
         </Menu>
-
-        <Typography
-          variant="h6"
-          color={colors.gray[300]}
-          sx={{ my: "25px", ml: "20px", fontSize: "16px" }}
-        >
-          {!collapsed ? "Pages" : " "}
-        </Typography>
-
-        <Menu
-          menuItemStyles={{
-            button: {
-              ":hover": {
-                color: "#00B2E2",
-                background: "transparent",
-              },
-              fontSize: "17px",
-              marginBottom: "10px",
-            },
-          }}
-        >
-          <Item title="Preguntas Frecuentes" path="/faq" icon={<HelpOutlineOutlined fontSize="medium" />} />
-        </Menu>
-
-        <Typography
-          variant="h6"
-          color={colors.gray[300]}
-          sx={{ my: "25px", ml: "20px", fontSize: "16px" }}
-        >
-          {!collapsed ? "Charts" : " "}
-        </Typography>
-
-        <Menu
-          menuItemStyles={{
-            button: {
-              ":hover": {
-                color: "#00B2E2",
-                background: "transparent",
-              },
-              fontSize: "17px",
-              marginBottom: "10px",
-            },
-          }}
-        >
-          <Item title="Pie Chart" path="/pie" icon={<DonutLargeOutlined fontSize="medium" />} />
-        </Menu>
+      
       </Box>
 
     </Sidebar>
