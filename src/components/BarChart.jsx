@@ -31,7 +31,10 @@ const BarChart = ({ isDashboard = false, data = [] }) => {
     .sort((a, b) => b.cantidad - a.cantidad)
     .slice(0, 10)
     .map((item, index) => ({
-      espacio: item.espacio,
+      espacio:
+        item.espacio.length > 20
+          ? item.espacio.slice(0, 20) + "..."
+          : item.espacio,
       reservas: item.cantidad,
       color: palette[index % palette.length],
     }));
@@ -54,7 +57,7 @@ const BarChart = ({ isDashboard = false, data = [] }) => {
       data={formattedData}
       keys={["reservas"]}
       indexBy="espacio"
-      margin={{ top: 50, right: 130, bottom: 80, left: 80 }}
+      margin={{ top: 50, right: 30, bottom: 100, left: 80 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
@@ -65,10 +68,10 @@ const BarChart = ({ isDashboard = false, data = [] }) => {
       axisBottom={{
         tickSize: 5,
         tickPadding: 10,
-        tickRotation: 0,
+        tickRotation: -25,
         legend: "Espacios",
         legendPosition: "middle",
-        legendOffset: 60,
+        legendOffset: 90, // ← MÁS ABAJO
       }}
       axisLeft={{
         tickSize: 5,
@@ -87,7 +90,7 @@ const BarChart = ({ isDashboard = false, data = [] }) => {
       labelSkipHeight={12}
       labelTextColor={{
         from: "color",
-        modifiers: [["darker", 2]],
+        modifiers: [["brighter", 2]],
       }}
       tooltip={({ id, value, color, indexValue }) => (
         <div
